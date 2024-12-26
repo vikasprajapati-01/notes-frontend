@@ -1,0 +1,82 @@
+
+.container {
+    margin-top: 8%;
+    width: 30%;
+    padding: 10px;
+    display: inline-flex;
+}
+
+.notes-container {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.note-title span,
+.note-desc span,
+.note-date span {
+    color: #007BFF;
+}
+
+.note-title, 
+.note-desc, 
+.note-date {
+    padding: 10px;
+}
+
+.delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 2.6%;
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 13%;
+    }
+
+    .notes-container {
+        width: 80%;
+        font-size: 20px;
+        padding: 8px;
+    }
+
+    .delete-btn {
+        font-size: 18px;
+        margin: 10px auto;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 93%;
+        margin-top: 20%;
+    }
+
+    .notes-container {
+        width: 95%;
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    .delete-btn {
+        font-size: 16px;
+        padding: 5px 8px;
+    }
+}
