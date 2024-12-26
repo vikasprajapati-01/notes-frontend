@@ -4,19 +4,20 @@ import { useNavigate } from "react-router-dom";
 import api from '../api'
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constant";
 import '../styles/Form.css'
+import Loading from "./Loading.jsx";
 
 function Form({ route, method }) {
     
     const [username, setUsername] = useState("");
     const [password, setPasswrod] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [dataloading, setDataLoading] = useState(false);
     const navigate = useNavigate();
 
     const name = method === "login" ? "Login" : "Register"
     const secName = method === "login" ? "Register" : "Login"
 
     const handleSubmit = async (e) => {
-        setLoading(true)
+        setDataLoading(true)
         e.preventDefault()
 
         try {
@@ -43,7 +44,7 @@ function Form({ route, method }) {
             }
         } 
         finally {
-            setLoading(false)
+            setDataLoading(false)
         }
     }
 
@@ -71,6 +72,8 @@ function Form({ route, method }) {
                     value={password} 
                     onChange={(e) => setPasswrod(e.target.value)} 
                     placeholder="Password" />
+
+            {dataloading && <Loading />}
 
             <div className="btn">
                 <button className="btn1" type="submit" > Submit </button>
